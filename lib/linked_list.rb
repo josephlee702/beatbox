@@ -7,6 +7,7 @@ class LinkedList
 
   def append(data)
     new_node = Node.new(data)
+    
     if @head.nil?
       @head = new_node
     else
@@ -94,21 +95,21 @@ class LinkedList
         str += "#{current_node.data} " if counter > position
         current_node = current_node.next_node
         counter += 1
+        end
+        str.strip
       end
     end
-    str.strip
-  end
 
   def includes?(str)
-    current_node = @head
-   if @head.nil?
-     p 'error, there is nothing in the list'
-   else
-     until current_node.data == str
-       return false
+      current_node = @head
+    if @head.nil?
+      p 'error, there is nothing in the list'
+    else
+      until current_node.data == str
+      return false
       current_node = current_node.next_node
-    end
-    true
+      end
+      true
     end
   end
 
@@ -131,6 +132,5 @@ class LinkedList
       current_node.next_node = nil
     end
     garbage_bin
+    end
   end
-end
-
