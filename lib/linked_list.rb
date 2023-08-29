@@ -111,4 +111,25 @@ class LinkedList
     true
     end
   end
+
+  def pop
+    return if @head == nil
+    #have to set current_node = 2nd to last node, then make current_node.next_node = nil
+    garbage_bin = ''
+
+    if @head.next_node.nil?
+      #first we want to take the head's data, insert into garbagebin, then eliminate the head node.
+      garbage_bin += @head.data
+      @head = nil
+    else
+      current_node = @head
+      #you can refer to the current node, and the node that is right after
+      until current_node.next_node.next_node.nil? 
+        current_node = current_node.next_node
+      end
+      garbage_bin += current_node.next_node.data
+      current_node.next_node = nil
+    end
+    garbage_bin
+  end
 end

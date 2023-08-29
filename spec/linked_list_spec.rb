@@ -107,4 +107,20 @@ RSpec.describe LinkedList do
     expect(list.includes?('dep')).to be false
     end
   end
+
+  describe '#pop' do
+    it '#pops out nodes in a list' do
+      list = LinkedList.new
+      list.append('woo')
+      list.append('shi')
+      list.prepend('deep')
+      list.append('shu')
+      list.append('blop')
+
+      expect(list.to_string).to eq('deep woo shi shu blop')
+      expect(list.pop).to eq('blop')
+      expect(list.pop).to eq('shu')
+      expect(list.to_string).to eq('deep woo shi')
+    end
+  end
 end
