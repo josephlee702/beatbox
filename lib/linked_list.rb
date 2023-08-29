@@ -59,4 +59,25 @@ class LinkedList
       @head = new_node
     end
   end
+
+  def insert(position, data)
+    counter = 0
+    new_node = Node.new(data)
+    current_node = @head
+    prev_node = @head
+
+    if position <= count 
+      until counter == position
+          counter += 1
+          current_node = current_node.next_node
+      end
+      counter = 0
+      until counter == (position-1)
+        counter += 1
+        prev_node = prev_node.next_node
+      end
+      prev_node.next_node = new_node
+      new_node.next_node = current_node
+    end
+  end
 end

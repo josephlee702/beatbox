@@ -52,4 +52,17 @@ RSpec.describe LinkedList do
       expect(list.count).to eq(3)
     end
   end
+
+  describe '#insert' do
+    it 'adds a new node into the linked list' do
+      list = LinkedList.new
+      list.append('plop')
+      list.append('suu')
+      list.prepend('dop')
+      list.insert(1, 'woo')
+
+      expect(list.to_string).to eq('dop woo plop suu')
+      expect(list.count).to eq(4)
+    end
+  end
 end
