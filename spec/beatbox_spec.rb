@@ -31,6 +31,7 @@ RSpec.describe BeatBox do
   it 'returns data of first node' do
     bb = BeatBox.new
     bb.append('deep doo ditt')
+
     expect(bb.list.to_string).to eq('deep doo ditt')
     expect(bb.list.head.data).to eq('deep')
   end
@@ -38,6 +39,7 @@ RSpec.describe BeatBox do
   it 'returns data of second node' do
     bb = BeatBox.new
     bb.append('deep doo ditt')
+
     expect(bb.list.to_string).to eq('deep doo ditt')
     expect(bb.list.head.next_node.data).to eq('doo')
   end
@@ -46,7 +48,7 @@ RSpec.describe BeatBox do
     bb = BeatBox.new
     bb.append('deep doo ditt')
     bb.append("woo hoo shu")
-
+    
     expect(bb.list.to_string).to eq('deep doo ditt woo hoo shu')
     expect(bb.list.head.next_node.data).to eq('doo')
   end
@@ -58,12 +60,12 @@ RSpec.describe BeatBox do
 
     expect(bb.list.to_string).to eq('deep doo ditt woo hoo shu')
     expect(bb.count).to eq(6)
-    end
+  end
 
-    it 'plays the Beat' do
-      bb = BeatBox.new
-      bb.append('deep doo ditt')
-      bb.append("woo hoo shu")
-     bb.play
-   end
+  it 'plays the Beat' do
+    bb = BeatBox.new
+    bb.append('deep doo ditt')
+    bb.append("woo hoo shu")
+    bb.play
+  end
 end
