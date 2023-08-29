@@ -82,4 +82,20 @@ class LinkedList
       puts "Error, can't insert at position #{position} in a list of size #{count}"
     end
   end
+
+  def find(position, length)
+    str = ''
+    counter = 1
+    current_node = @head
+    if @head.nil?
+      p 'error, nothing in list'
+    else
+      until counter > position+length
+        str += "#{current_node.data} " if counter > position
+        current_node = current_node.next_node
+        counter += 1
+      end
+      end
+      str.strip
+    end
 end

@@ -77,4 +77,19 @@ RSpec.describe LinkedList do
       expect {list.insert(5, 'woo').to output("Error, can't insert at position 5 in a list of size 5")}
     end
   end
+
+  describe 'find range of nodes' do
+    it '#finds a range of nodes and returns it' do
+    list = LinkedList.new
+    list.append('woo')
+    list.append('shi')
+    list.prepend('deep')
+    list.append('shu')
+    list.append('blop')
+
+    expect(list.to_string).to eq('deep woo shi shu blop') 
+    expect(list.find(2,1)).to eq('shi')
+    expect(list.find(1,3)).to eq('woo shi shu')
+    end
+  end
 end
