@@ -4,7 +4,6 @@ require '../lib/node.rb'
 
 RSpec.describe BeatBox do
   it 'check if bb is an instance of beatbox' do
-
     bb = BeatBox.new
 
     expect(bb).to be_instance_of(BeatBox)
@@ -12,6 +11,14 @@ RSpec.describe BeatBox do
 
   it 'bb.list is instance of LinkedList' do
     bb = BeatBox.new
+
     expect(bb.list).to be_instance_of(LinkedList)
   end
+
+  it 'head of bb is nil' do
+    bb = BeatBox.new
+    
+    expect(bb.list.head).to eq(nil)
+  end
+
 end
