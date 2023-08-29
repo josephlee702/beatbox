@@ -31,4 +31,13 @@ RSpec.describe LinkedList do
       expect(list.count).to eq(2)
     end
   end
+
+  describe '#to_string' do
+    it 'generates a string of all the items in the list, separated by spaces' do
+      list = LinkedList.new
+      list.append('doop')
+      list.append('deep')
+
+      expect(list.to_string).to eq('doop deep')
+    end
 end
