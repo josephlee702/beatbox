@@ -95,7 +95,20 @@ class LinkedList
         current_node = current_node.next_node
         counter += 1
       end
-      end
-      str.strip
     end
+    str.strip
+  end
+
+  def includes?(str)
+    current_node = @head
+   if @head.nil?
+     p 'error, there is nothing in the list'
+   else
+     until current_node.data == str
+       return false
+      current_node = current_node.next_node
+    end
+    true
+    end
+  end
 end

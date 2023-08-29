@@ -78,7 +78,7 @@ RSpec.describe LinkedList do
     end
   end
 
-  describe 'find range of nodes' do
+  describe '#find' do
     it '#finds a range of nodes and returns it' do
     list = LinkedList.new
     list.append('woo')
@@ -90,6 +90,21 @@ RSpec.describe LinkedList do
     expect(list.to_string).to eq('deep woo shi shu blop') 
     expect(list.find(2,1)).to eq('shi')
     expect(list.find(1,3)).to eq('woo shi shu')
+    end
+  end
+
+  describe '#includes?' do
+    it '#returns boolean based on if string is included in list' do
+    list = LinkedList.new
+    list.append('woo')
+    list.append('shi')
+    list.prepend('deep')
+    list.append('shu')
+    list.append('blop')
+
+    expect(list.to_string).to eq('deep woo shi shu blop')
+    expect(list.includes?('deep')).to be true
+    expect(list.includes?('dep')).to be false
     end
   end
 end
