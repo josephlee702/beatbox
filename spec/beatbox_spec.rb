@@ -17,8 +17,14 @@ RSpec.describe BeatBox do
 
   it 'head of bb is nil' do
     bb = BeatBox.new
-    
+
     expect(bb.list.head).to eq(nil)
   end
 
+  it 'appends strings' do
+    bb = BeatBox.new
+    bb.append('deep doo ditt')
+
+    expect(bb.list.to_string).to eq('deep doo ditt')
+  end
 end
