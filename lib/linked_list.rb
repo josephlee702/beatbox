@@ -78,6 +78,8 @@ class LinkedList
       end
       prev_node.next_node = new_node
       new_node.next_node = current_node
+    else
+      puts "Error, can't insert at position #{position} in a list of size #{count}"
     end
   end
 end

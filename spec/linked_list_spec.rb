@@ -65,4 +65,16 @@ RSpec.describe LinkedList do
       expect(list.count).to eq(4)
     end
   end
+
+  describe '#insert errors' do
+    it '#doesnt insert and throws error' do
+      list = LinkedList.new
+      list.append('plop')
+      list.append('suu')
+      list.prepend('dop')
+      list.insert(5, 'woo')
+
+      expect {list.insert(5, 'woo').to output("Error, can't insert at position 5 in a list of size 5")}
+    end
+  end
 end
