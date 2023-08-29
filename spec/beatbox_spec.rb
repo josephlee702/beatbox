@@ -4,7 +4,7 @@ require '../lib/node.rb'
 
 RSpec.describe BeatBox do
   it 'check if bb is an instance of beatbox' do
-    bb = BeatBox.new
+  bb = BeatBox.new
 
     expect(bb).to be_instance_of(BeatBox)
   end
@@ -59,4 +59,11 @@ RSpec.describe BeatBox do
     expect(bb.list.to_string).to eq('deep doo ditt woo hoo shu')
     expect(bb.count).to eq(6)
     end
+
+    it 'plays the Beat' do
+      bb = BeatBox.new
+      bb.append('deep doo ditt')
+      bb.append("woo hoo shu")
+     bb.play
+   end
 end
