@@ -21,4 +21,14 @@ RSpec.describe LinkedList do
       expect(list.head).to be_instance_of(Node)
     end
   end
+
+  describe '#count' do
+    it "tells us how many things are in the list" do
+      list = LinkedList.new
+      list.append('doop')
+      list.append(' deep')
+
+      expect(list.count).to eq(2)
+    end
+  end
 end
