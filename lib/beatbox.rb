@@ -12,4 +12,8 @@ class BeatBox
     #must call class method on an object of that class
     array.each {|element| list.append(element)}
   end
+
+  def count
+    list.count
+  end
 end
